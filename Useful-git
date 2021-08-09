@@ -1,0 +1,2 @@
+// ignores gitignore or any other file
+git update-index --assume-unchanged .gitignore
