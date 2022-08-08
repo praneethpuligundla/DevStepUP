@@ -1,0 +1,2 @@
+#delete all local branches except main and develop
+git branch | grep -v "develop" | grep -v "main" | xargs git branch -D
