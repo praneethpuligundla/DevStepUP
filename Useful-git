@@ -1,2 +1,11 @@
 // ignores gitignore or any other file
 git update-index --assume-unchanged .gitignore
+
+// Patch changes in a directory - easier to break down big changes
+git checkout branch
+git diff origin/master -- service/src/ > name.patch
+git checkout -b review-service-only origin/master
+git apply name.patch
+git add service/*
+git commit -m "Service changes"
+git push origin review-service-only:review-service-only
